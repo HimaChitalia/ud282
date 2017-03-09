@@ -148,11 +148,55 @@ public class Game {
      * @param grid 2D array of characters representing the game board
      * @return String indicating the outcome of the game: "X wins" or "O wins" or "Tie" or "None"
      */
-    public String checkGameWinner(char [][]grid){
-        String result = "None";
-        //Student code goes here ...
-        return result;
-    }
+     public String checkGameWinner(char [][]grid){
+             String result = "None";
+             //Student code goes here ...
+           if (grid[0][0]=='x' && grid[1][0]=='x' && grid[2][0]=='x'){
+               result = "Congratulations winner X";
+           }  else if (grid[0][1]=='x' && grid[1][1]=='x' && grid[2][1]=='x'){
+                 result = "Congratulations winner X";
+           }else if (grid[0][2]=='x' && grid[1][2]=='x' && grid[2][2]=='x') {
+               result = "Congratulations winner X";
+           }else if (grid[0][0]=='x' && grid[0][1]=='x' && grid[0][2]=='x') {
+               result = "Congratulations winner X";
+           }else if (grid[1][0]=='x' && grid[1][1]=='x' && grid[1][2]=='x') {
+               result = "Congratulations winner X";
+           }else if (grid[2][0]=='x' && grid[2][1]=='x' && grid[2][2]=='x') {
+               result = "Congratulations winner X";
+           }else if (grid[0][0]=='x' && grid[1][1]=='x' && grid[2][2]=='x') {
+               result = "Congratulations winner X";
+           }else if (grid[2][0]=='x' && grid[1][1]=='x' && grid[0][2]=='x') {
+               result = "Congratulations winner X";
+           }  else if  (grid[0][0]=='o' && grid[1][0]=='o' && grid[2][0]=='o'){
+                 result = "Congratulations winner O";
+             }  else if (grid[0][1]=='o' && grid[1][1]=='o' && grid[2][1]=='o'){
+                 result = "Congratulations winner O";
+             }else if (grid[0][2]=='o' && grid[1][2]=='o' && grid[2][2]=='o') {
+                 result = "Congratulations winner O";
+             }else if (grid[0][0]=='o' && grid[0][1]=='o' && grid[0][2]=='o') {
+                 result = "Congratulations winner O";
+             }else if (grid[1][0]=='o' && grid[1][1]=='o' && grid[1][2]=='o') {
+                 result = "Congratulations winner O";
+             }else if (grid[2][0]=='o' && grid[2][1]=='o' && grid[2][2]=='o') {
+                 result = "Congratulations winner O";
+             }else if (grid[0][0]=='o' && grid[1][1]=='o' && grid[2][2]=='o') {
+                 result = "Congratulations winner O";
+             }else if (grid[2][0]=='o' && grid[1][1]=='o' && grid[0][2]=='o') {
+                 result = "Congratulations winner O";
+             } else {
+               for (int i = 0; i < 3; i++) {
+                   for (int j = 0; j < 3; j++) {
+                       if(grid[i][j] == '-') {
+                           result = "None";
+                           return result;
+                       }else{
+                           result = "Tie!";
+                       }
+                   }
+               }
+           }
+             return result;
+         }
 
     /**
      * Main function
